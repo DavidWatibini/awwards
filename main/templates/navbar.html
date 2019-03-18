@@ -6,26 +6,39 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
 </head>
+
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light" style='margin-bottom:200px;'>
+    <div class='container'>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div id="main">
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()">☰ menu</span>
+        </div>
+        <form class="form-inline" id="one" action=''>
+          <input class="form-control mr-sm-2 nav-item" style='padding-right:30px;width:120%' type="search" placeholder="Search Image.." aria-label="Search" name=title></form>
+        <br>
+        <div style='margin-left:150px;float:right;'>
 
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="#">Home</a>
-  <a href="#">Profile</a>
-  <a href="#">Post Site</a>
-</div>
-
-<div id="main">
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">☰</span>
-</div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div id="mySidenav" class="sidenav fixed-top ">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="#">Home</a>
+    <a href="#">Profile</a>
+    <a href="#">Post Site</a>
+  </div>
 
 </body>
+
 </html>
