@@ -4,6 +4,7 @@
 {% load bootstrap4%}
 
 <div class="container">
+  <button id="button_h" type="button" class="btn btn-outline-secondary"><a href="/new_profile">Edit Profile</a></button>
   {% for all in my_profile%}
   <img src="{{all.profile_photo.url}}" alt="man" width="300" height="500">
   <h4 id="p_hhh">{{all.user_id}}</h4>

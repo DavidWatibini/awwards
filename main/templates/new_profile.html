@@ -7,7 +7,7 @@
 </head>
 
 <body>
-  <form method='post' action='{% url ' profile'%}'>
+  <form method='post' action='{% url 'profile'%}'>
     {% csrf_token %}
     {{ form }}
     <input type="hidden" id="wati" name="user_id" value="{{user.id}}">
