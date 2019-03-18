@@ -25,7 +25,7 @@ def home_index(request):
     index_path = Image.objects.all()
     # forms=CommentForm()
     # comments = Comments.objects.all()
-    my_profile = Profile.objects.all()
+    # my_profile = Profile.objects.all()
     return render(request,'home.html',locals())
 
 #profile page

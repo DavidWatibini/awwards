@@ -8,14 +8,12 @@
     </div>
     <div class="col-md-8">
 
-      <div class="card" style="width: 35rem;">
-
         {% for new in index_path %}
-          <img src="{{new.image_view.url}}" alt="{{user.username}}">
+          <img src="{{new.image_view.url}}" alt="man" width="300" height="500">
           <p>{{new.image_description}}</p>
         {% endfor %}
 
-      </div>
+
     </div>
   </div>
 </div>
