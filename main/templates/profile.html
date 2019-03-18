@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ block.super}}
+{% load bootstrap4%}
+
+<div class="container">
+  {% for all in my_profile%}
+  <h4 id="p_hhh">{{all.bio}}</h4>
+  {% endfor %}
+
+</div>
+
+</div>
+
+{%endblock%}

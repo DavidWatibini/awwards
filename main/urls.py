@@ -7,5 +7,6 @@ urlpatterns = [
     url(r'^$', views.signup),
     url(r'accounts/', include('django.contrib.auth.urls')),
     url(r'^home/$',views.home_index, name="homePage"),
+    url(r'profile/',views.profile_path, name='profile'),
 
 ]
