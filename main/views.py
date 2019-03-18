@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
+from .models import *
 
 # Create your views here.
 #first page - signup page
@@ -19,7 +20,7 @@ def signup(request):
 #landing page - home page
 def home_index(request):
 
-    # index_images = Image.objects.all()
+    index_path = Image.objects.all()
     # forms=CommentForm()
     # comments = Comments.objects.all()
     # all_profile = Profile.objects.all()
