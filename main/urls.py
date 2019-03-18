@@ -6,5 +6,6 @@ from . import views
 urlpatterns = [
     url(r'^$', views.signup),
     url(r'accounts/', include('django.contrib.auth.urls')),
+    url(r'^home/$',views.home_index, name="homePage"),
 
 ]

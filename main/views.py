@@ -15,3 +15,12 @@ def signup(request):
         form = UserCreationForm()
 
     return render(request,'signup.html',locals())
+
+#landing page - home page
+def home_index(request):
+
+    index_images = Image.objects.all()
+    forms=CommentForm()
+    comments = Comments.objects.all()
+    all_profile = Profile.objects.all()
+    return render(request,'home.html',locals())
