@@ -11,7 +11,8 @@
       <div class="card" style="width: 35rem;">
 
         {% for new in index_path %}
-          <img class="card-img-top" src="{{new.image_view.url}}" alt="{{user.username}}">
+          <img src="{{new.image_view.url}}" alt="{{user.username}}">
+          <p>{{new.image_description}}</p>
         {% endfor %}
 
       </div>

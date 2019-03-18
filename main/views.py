@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from .models import *
 from .forms import *
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 #first page - signup page
@@ -24,7 +25,7 @@ def home_index(request):
     index_path = Image.objects.all()
     # forms=CommentForm()
     # comments = Comments.objects.all()
-    # all_profile = Profile.objects.all()
+    my_profile = Profile.objects.all()
     return render(request,'home.html',locals())
 
 #profile page
