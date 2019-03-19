@@ -25,7 +25,7 @@ class ImageTestClass(TestCase):
         self.new_image.save_image()
         self.assertTrue(len(Image.objects.all()) > 0)
 
-    def test_edit_caption(self):
+    def test_set_description(self):
 
         self.new_image.save_image()
         image = Image.objects.get(id = 1)
