@@ -82,7 +82,7 @@ or just use this
 
 -To test the app, run this commands in the terminal.
 
-`$ python3.6 manage.py test.py awward`
+`$ python3.6 manage.py test.py main`
 
 
 ## Contact Information
