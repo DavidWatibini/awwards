@@ -19,3 +19,8 @@ class ImageTestClass(TestCase):
     def test_init(self):
 
         self.assertTrue(self.new_image.image_view == "wati.jpeg")
+
+    def test_save_image(self):
+
+        self.new_image.save_image()
+        self.assertTrue(len(Image.objects.all()) > 0)
