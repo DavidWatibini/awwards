@@ -80,7 +80,7 @@ or just use this
 
 ## TDD
 
--To test the app, run this commands in the terminal;
+-To test the app, run this commands in the terminal.
 
 `$ python3.6 manage.py test.py awward`
 
