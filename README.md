@@ -1,6 +1,6 @@
 # AWWARDS
 
-This is Photo Gallery built in python that allows users to view and share their favorite Photos.
+This is Project review site  built in python that allows users to view, review and share their favorite application projects.
 
 ## Author name
 
