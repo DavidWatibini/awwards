@@ -24,3 +24,10 @@ class ImageTestClass(TestCase):
 
         self.new_image.save_image()
         self.assertTrue(len(Image.objects.all()) > 0)
+
+    def test_edit_caption(self):
+
+        self.new_image.save_image()
+        image = Image.objects.get(id = 1)
+        image.set_description("qwertyuiop")
+        self.assertTrue(image.description == "qwertyuiop")

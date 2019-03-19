@@ -18,6 +18,10 @@ class Image(models.Model):
     def save_image(self):
         self.save()
 
+    def set_description(self,new_description):
+        self.description = new_description
+        self.save()
+
 
 class Profile(models.Model):
     profile_photo = models.ImageField(upload_to = 'profile/')
