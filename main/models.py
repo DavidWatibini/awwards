@@ -10,7 +10,8 @@ from django.db.models.signals import post_save
 class Image(models.Model):
 
     image_view = models.ImageField(upload_to = 'gallery/')
-    image_description = models.CharField(max_length=100, blank=True)
+    image_description = models.TextField(max_length=500, blank=True)
+    date_posted=models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.image_description
