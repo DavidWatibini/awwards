@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import *
 from .forms import *
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 #first page - signup page
@@ -29,6 +30,7 @@ def home_index(request):
     return render(request,'home.html',locals())
 
 #profile page
+@login_required
 def profile_path(request):
     if request.method == 'POST':
         form = UploadForm(request.POST,request.FILES)
@@ -43,6 +45,7 @@ def profile_path(request):
         my_profile = Profile.objects.all()
     return render(request,'profile.html', locals())
 
+@login_required
 def update(request):
     all_profile = Profile.objects.all()
     profile = Profile.objects.get(user_id = request.user)
