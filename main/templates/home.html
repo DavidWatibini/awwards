@@ -14,7 +14,9 @@
         <br>
         <br>
         {% for new in index_path %}
-        <img src="{{new.image_view.url}}" alt="my image" height="150px" width="50%">
+        <a data-fancybox href="{{new.image_view.url}}" data-caption="<p>{{new.image_description}}</p> <button type='button' class='btn btn-primary'name='button' >view_site</button>">
+          <img src=" {{new.image_view.url}}" alt="image" />
+        </a>
 
         <!-- <div class="middle">
           <a href="/view_site">View page</a>
