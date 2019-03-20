@@ -9,9 +9,11 @@ from django.db.models.signals import post_save
 # Create your models here.
 class Image(models.Model):
 
+    image_name = models.CharField(max_length=50, blank=True)
     image_view = models.ImageField(upload_to = 'gallery/')
     image_description = models.TextField(max_length=500, blank=True)
-    date_posted=models.DateTimeField(auto_now=True)
+    link = models.CharField(max_length=50, blank=True)
+    date_posted = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.image_description
