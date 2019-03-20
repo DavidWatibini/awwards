@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ block.super}}
+{% load bootstrap4%}
+<div class="container">
+
+  <div class="row">
+    {% if searched_image %}
+    <h2>Found {{ searched_image |length }} of searched term {{message}}</h2>
+    {% else %}
+    <h2> Found 0 for the search term {{message}}</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+
+    {% if searched_image %}
+    {% for images in searched_image %}
+    <div class="col-sm-6 col-md-3">
+      <a data-fancybox href="{{images.view.url}}" data-caption="<p>{{images.name}}</p> <p>{{images.description}}</p> <button type='button' class='btn btn-primary'name='button' >view_site</button>">
+        <img src=" {{images.view.url}}" alt="image" />
+      </a>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

@@ -9,14 +9,14 @@ from django.db.models.signals import post_save
 # Create your models here.
 class Image(models.Model):
 
-    image_name = models.CharField(max_length=50, blank=True)
-    image_view = models.ImageField(upload_to = 'gallery/')
-    image_description = models.TextField(max_length=500, blank=True)
+    name = models.CharField(max_length=50, blank=True)
+    view = models.ImageField(upload_to = 'gallery/')
+    description = models.TextField(max_length=500, blank=True)
     link = models.CharField(max_length=50, blank=True)
     date_posted = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.image_description
+        return self.description
 
     def save_image(self):
         self.save()
@@ -25,6 +25,10 @@ class Image(models.Model):
         self.description = new_description
         self.save()
 
+    @classmethod
+    def search_by_name(cls,search_term):
+        project = Image.objects.filter(name__icontains = search_term)
+        return project
 
 class Profile(models.Model):
     profile_photo = models.ImageField(upload_to = 'profile/')

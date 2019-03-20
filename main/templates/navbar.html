@@ -23,8 +23,12 @@
         <div id="main">
           <span style="font-size:30px;cursor:pointer" onclick="openNav()">☰ menu</span>
         </div>
-        <form class="form-inline" id="one" action=''>
-          <input class="form-control mr-sm-2 nav-item" style='padding-right:30px;width:120%' type="search" placeholder="Search Project.." aria-label="Search" name=title></form>
+
+        <form class="form-inline" role="search" action="{% url 'search_results' %}">
+
+          <input class="form-control mr-sm-2 nav-item" style='padding-right:30px;width:120%' type="text" placeholder="Search Project.." aria-label="Search" name="image">
+
+        </form>
         <br>
         <div style='margin-left:150px;float:right;'>
           <div class="style">
@@ -32,12 +36,18 @@
 
 
             {% if user.is_authenticated %}
-            <a href="{% url 'logout' %}"><h6>LOGOUT</h6></a>
+            <a href="{% url 'logout' %}">
+              <h6>LOGOUT</h6>
+            </a>
             <a href="{% url 'profile' %}"><button> Submit Your Site </button></a>
             <!-- <a href="{% url 'profile' %}"><h6>{{user.username}}</h6></a> -->
             {% else %}
-            <a href="{% url 'login' %}"><h6>LOGIN</h6></a>
-            <a href="{% url 'login' %}"><h6>SIGNUP</h6></a>
+            <a href="{% url 'login' %}">
+              <h6>LOGIN</h6>
+            </a>
+            <a href="{% url 'login' %}">
+              <h6>SIGNUP</h6>
+            </a>
 
             {% endif %}
           </div>

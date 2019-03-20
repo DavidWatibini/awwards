@@ -60,3 +60,16 @@ def update(request):
         form  = ProfileForm()
 
     return render(request,'new_profile.html', locals())
+
+def search_project(request):
+
+    if 'image' in request.GET and request.GET["image"]:
+        search_term = request.GET.get("image")
+        searched_image = Image.search_by_name(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',locals())
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',locals())
