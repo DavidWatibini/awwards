@@ -7,21 +7,27 @@
     <div class="col-md-1">
     </div>
     <div class="col-md-8">
+      <div class="cards">
+        <hr>
+        Hello <strong>{{user}}</strong>, take a look at today's top trending sites
+        <hr>
+        <br>
+        <br>
+        {% for new in index_path %}
+        <img src="{{new.image_view.url}}" alt="my image" height="150px" width="50%">
 
-
-        <div class="cards">
-
-          {% for new in index_path %}
-          <img src="{{new.image_view.url}}" alt="my image" height="200px" width="100%">
-
-          <div class="middle">
-            <a href="/view_site">View page</a>
-            <p>{{new.image_description}}</p>
-          {% endfor %}
-          </div>
-        </div>
+        <!-- <div class="middle">
+          <a href="/view_site">View page</a>
+          <p>{{new.image_description}}</p>
+        </div> -->
+        <br>
+        <br>
+        <br>
+        <br>
+        {% endfor %}
       </div>
     </div>
   </div>
+</div>
 </div>
 {% endblock %}
