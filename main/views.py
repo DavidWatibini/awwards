@@ -1,10 +1,11 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from .models import *
 from .forms import *
 from django.shortcuts import get_object_or_404
-from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 #first page - signup page
@@ -45,7 +46,7 @@ def profile_path(request):
         my_profile = Profile.objects.all()
     return render(request,'profile.html', locals())
 
-@login_required
+
 def update(request):
     all_profile = Profile.objects.all()
     profile = Profile.objects.get(user_id = request.user)
