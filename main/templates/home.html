@@ -9,7 +9,11 @@
     <div class="col-md-8">
       <div class="cards">
         <hr>
+        {% if user.is_authenticated %}
         Hello <strong>{{user}}</strong>, take a look at today's top trending sites
+        {% else %}
+        <a href="{% url 'login' %}">Login</a>
+        {% endif %}
         <hr>
         <br>
         <br>
