@@ -33,17 +33,10 @@ def home_index(request):
 #profile page
 @login_required
 def profile_path(request):
-    if request.method == 'POST':
-        form = UploadForm(request.POST,request.FILES)
 
-        if form.is_valid():
-            form.save()
-            return redirect('profile')
-    else:
-        form =UploadForm()
+    images = Image.objects.all()
+    my_profile = Profile.objects.all()
 
-        images = Image.objects.all()
-        my_profile = Profile.objects.all()
     return render(request,'profile.html', locals())
 
 
@@ -73,3 +66,16 @@ def search_project(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html',locals())
+
+def post_new(request):
+    
+    if request.method == 'POST':
+        form = UploadForm(request.POST,request.FILES)
+
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form =UploadForm()
+
+    return render(request,'post_new.html',locals())

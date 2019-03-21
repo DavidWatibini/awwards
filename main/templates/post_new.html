@@ -1,0 +1,22 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Upload Post</title>
+  </head>
+  <body>
+    <form method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
+    {%for fields in form%}
+    {{ fields }}
+    <!-- {{ form|crispy }} -->
+    {%endfor%}
+    <button type="submit" name="button">upload</button>
+  </form>
+
+  </body>
+</html>

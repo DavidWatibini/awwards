@@ -5,6 +5,7 @@
 
 <div class="container">
   <button id="button_h" type="button" class="btn btn-outline-secondary"><a href="/update">Edit Profile</a></button>
+  <button id="button_h" type="button" class="btn btn-outline-secondary"><a href="{% url 'post' %}">Publish Site</a></button>
 
 
   {% for all in my_profile%}
@@ -13,14 +14,6 @@
   <h4>{{all.contacts}}</h4>
   <h4>{{all.bio}}</h4>
   {% endfor %}
-
-  <form method='POST' enctype="multipart/form-data">
-  {% csrf_token %}
-  {%for fields in form%}
-  {{ fields }}
-  {%endfor%}
-  <button type="submit" name="button">upload</button>
-</form>
 
 </div>
 {%endblock%}

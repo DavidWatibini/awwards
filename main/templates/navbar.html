@@ -39,7 +39,7 @@
             <a href="{% url 'logout' %}">
               <h6>LOGOUT</h6>
             </a>
-            <a href="{% url 'profile' %}"><button> Submit Your Site </button></a>
+            <a href="{% url 'post' %}"><button> Submit Your Site </button></a>
             <!-- <a href="{% url 'profile' %}"><h6>{{user.username}}</h6></a> -->
             {% else %}
             <a href="{% url 'login' %}">
@@ -62,7 +62,7 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     <a href="{% url 'homePage' %}">Home</a>
     <a href="{% url 'profile' %}">Profile</a>
-    <a href="#">Post Site</a>
+    <a href="{% url 'post' %}">Post Site</a>
   </div>
 
 </body>
