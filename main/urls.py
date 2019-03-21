@@ -4,7 +4,7 @@ from django.conf.urls import url,include
 from . import views
 
 urlpatterns = [
-    url(r'^signup$', views.signup),
+    url(r'signup/', views.signup, name="signup"),
     url(r'accounts/', include('django.contrib.auth.urls')),
     url(r'^$',views.home_index, name="homePage"),
     url(r'profile/',views.profile_path, name='profile'),
