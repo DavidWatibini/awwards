@@ -7,7 +7,7 @@ from django.db.models.signals import post_save
 
 
 # Create your models here.
-class Image(models.Model):
+class Project(models.Model):
 
     name = models.CharField(max_length=50, blank=True)
     view = models.ImageField(upload_to = 'gallery/')
@@ -27,7 +27,7 @@ class Image(models.Model):
 
     @classmethod
     def search_by_name(cls,search_term):
-        project = Image.objects.filter(name__icontains = search_term)
+        project = Project.objects.filter(name__icontains = search_term)
         return project
 
 class Profile(models.Model):

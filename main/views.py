@@ -24,7 +24,7 @@ def signup(request):
 #landing page - home page
 def home_index(request):
 
-    index_path = Image.objects.all()
+    index_path = Project.objects.all()
     # forms=CommentForm()
     # comments = Comments.objects.all()
     # my_profile = Profile.objects.all()
@@ -34,7 +34,7 @@ def home_index(request):
 @login_required
 def profile_path(request):
 
-    images = Image.objects.all()
+    images = Project.objects.all()
     my_profile = Profile.objects.all()
 
     return render(request,'profile.html', locals())
@@ -56,9 +56,9 @@ def update(request):
 
 def search_project(request):
 
-    if 'image' in request.GET and request.GET["image"]:
-        search_term = request.GET.get("image")
-        searched_image = Image.search_by_name(search_term)
+    if 'project' in request.GET and request.GET["project"]:
+        search_term = request.GET.get("project")
+        searched_project = Project.search_by_name(search_term)
         message = f"{search_term}"
 
         return render(request, 'search.html',locals())
@@ -68,7 +68,7 @@ def search_project(request):
         return render(request, 'search.html',locals())
 
 def post_new(request):
-    
+
     if request.method == 'POST':
         form = UploadForm(request.POST,request.FILES)
 

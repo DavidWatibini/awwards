@@ -3,7 +3,7 @@ from .models import *
 
 class UploadForm(forms.ModelForm):
     class Meta:
-        model = Image
+        model = Project
         exclude = ('website',)
 
 class ProfileForm(forms.ModelForm):
